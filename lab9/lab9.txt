@@ -2,8 +2,11 @@ QUESTION 1.  Read through the program lab9.bin. What do you expect the program t
 
 ANSWER: 
 
+I expect the program to do exactly what the comments say, which is to begin at memory location 3000, clear R2 by anding it with 0, add the decimal number 12 to R2 -- making it have the value 12, and then halt.
+
 
 QUESTION 2.  Explain in a few sentences why the ability to step through a program (run one instruction at a time) is a very useful tool for debugging a program. Debugging is the process of finding and correcting bugs (or errors) in a program. Hint: Finding a bug is often much more difficult than correcting it.
 
 ANSWER: 
 
+By stepping through a program step by step instead of running it start to finish with no breaks, one can see errors when they happen and have a better understanding as to why they are happening and be able to identify a point rather than having to guess and rework what could be fully functional and correct code.
