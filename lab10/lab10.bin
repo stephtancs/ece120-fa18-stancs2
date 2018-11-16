@@ -1,8 +1,40 @@
-; This is the file you will use for the lab assignment
-; Make sure to comment your code properly and don't exceed 
-; the line limitation for this assignment.  Good luck!
+; Steph Tancs
 
+; What's Good:
+; A counter is established to count through an array of 10 integers (located at x3132), one at a 
+; time, and add each integer analyzed as positive to a final sum of positive integers.
+
+; Registers:
+;    R0 = stores the memory address of the current integer
+;    R3 = stores the integer found at R0
+;    R4 = counter from 10 to 0
+;    R5 = final sum of positive integers
+
+; Code:
 0011 0001 0000 0000 ; x3100 - starting address of the program
 
-; The program description and code starts here
+; initialize
+
+0101 000 000 1 00000 ; R0 = R0 AND 0
+0101 011 011 1 00000 ; R3 = R3 AND 0
+0101 100 100 1 00000 ; R4 = R4 AND 0
+0101 101 101 1 00000 ; R5 = R5 AND 0
+
+; set counter and beginning memory address
+
+0001 100 100 1 01010  ; R4 += 10
+1110 010 000101011    ; R0 = x3131 (starting memory address)
+
+; loop
+
+0001 010 010 1 00001  ; (LOOP START) R0 = R0++ (increment memory address)
+0110 011 010 000000   ; R3 = mem[R0+0] (set R3 to value stored in R0)
+0000 110 000000001    ; BRnz (test to move on to next step based on positivity)
+0001 101 101 0 00 011 ; R5 += R3 (adds value R3 to R5 if positive)
+0001 100 100 1 11111  ; R4-- (decrement counter)
+0000 101 111111010    ; (LOOP END*) BRnp (*if counter is a not zero, loop restarts)
+
+; end
+
+1111 0000 0010 0101   ; HALT
 
