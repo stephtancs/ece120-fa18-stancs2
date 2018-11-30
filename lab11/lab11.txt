@@ -1,9 +1,20 @@
 Question 1: Describe the errors that occur when trying to assemble lab11.asm. Identify the cause of each error.
 
-
+ 14: illegal operands for missing opcode - no .ORIG in the first line, just memory location
+ 16: instruction appears before .ORIG - no .ORIG appearing in the code, no starting position
+ 17: constant outside of allowed range - uses new PC value instead of decimal number for increment
+ 19: illegal operands for ADD - extra comma
+ 30: constant outside of allowed range - uses new PC value instead of decimal number for increment
+ 32: label OUTERLOOP has already appeared - switch pz to zp
+ 35: constant outside of allowed range - uses new PC value instead of decimal number for increment
+ 43: no .END directive found - no defined end
 
 Question 2: For each label in the code, write down the corresponding memory location. 
-
-
+	
+	OUTERLOOP: x3004
+	INNERLOOP: x3005
+	INPUT: x300E
 
 Question 3: Between using labels and explicit memory locations/offsets, which one makes the most sense, and why?
+	
+	Labels make the most sense in this context because it's way easier to understand labels and there is no need to concern yourself with offsets and adding more lines of code because of them/changing numbers each time.
