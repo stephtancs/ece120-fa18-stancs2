@@ -1,0 +1,2 @@
+File "lab12.asm" was not modified
+Total: 0/85
